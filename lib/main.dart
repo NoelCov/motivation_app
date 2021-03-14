@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'quotes.dart';
 
@@ -79,18 +80,36 @@ class _MotivationState extends State<Motivation> {
               ),
               Expanded(
                 flex: 1,
-                child: IconButton(
-                  icon: Icon(
-                    Icons.read_more,
-                    color: Colors.white,
-                    size: 30.0,
-                  ),
-                  tooltip: 'Go to next quote',
-                  onPressed: () {
-                    setState(() {
-                      quotes.nextQuote();
-                    });
-                  },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    IconButton(
+                      icon: Icon(
+                        Icons.menu_open,
+                        color: Colors.white,
+                        size: 30.0,
+                      ),
+                      tooltip: 'Go to previous quote',
+                      onPressed: () {
+                        setState(() {
+                          quotes.previousQuote();
+                        });
+                      },
+                    ),
+                    IconButton(
+                      icon: Icon(
+                        Icons.read_more,
+                        color: Colors.white,
+                        size: 30.0,
+                      ),
+                      tooltip: 'Go to next quote',
+                      onPressed: () {
+                        setState(() {
+                          quotes.nextQuote();
+                        });
+                      },
+                    ),
+                  ]
                 ),
               )
             ],

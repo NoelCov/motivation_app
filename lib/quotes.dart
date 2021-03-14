@@ -63,6 +63,14 @@ class Quotes {
     }
   }
 
+  void previousQuote() {
+    if (counter == 0){
+      counter = quotes.length -1;
+    } else {
+      counter --;
+    }
+  }
+
   void resetCounter() {
     counter = 0;
   }
